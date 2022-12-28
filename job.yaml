@@ -1,0 +1,2 @@
+task: image_object_detection
+primary_metric: mean_average_precision
