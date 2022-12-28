@@ -1,0 +1,17 @@
+name: od-fridge-items-mlflow-deploy
+endpoint_name: od-fridge-items-endpoint
+model: azureml:od-fridge-items-mlflow-model@latest
+instance_type: Standard_DS3_v2
+instance_count: 1
+liveness_probe:
+    failure_threshold: 30
+    success_threshold: 1
+    timeout: 2
+    period: 10
+    initial_delay: 2000
+readiness_probe:
+    failure_threshold: 10
+    success_threshold: 1
+    timeout: 10
+    period: 10
+    initial_delay: 2000
